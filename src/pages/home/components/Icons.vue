@@ -104,6 +104,8 @@ export default {
     background rgba(144,144,144,0.8)
   .home-icons >>> .swiper-pagination-bullet-active
     background rgba(0,175,190,.8)
+  .home-icons >>> .swiper-pagination-bullets
+    bottom 12px
   .home-icons
     width 100%
     height 0
