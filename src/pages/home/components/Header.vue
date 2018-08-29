@@ -4,13 +4,16 @@
         <i class="iconfont">&#xe624;</i>
       </div>
       <div class="header-center"><i class="iconfont">&#xe632;</i> 输入城市/景点/游玩主题</div>
-      <div class="header-right">北京<i class="iconfont">&#xe64a;</i></div>
+      <div class="header-right">{{ city }}<i class="iconfont">&#xe64a;</i></div>
     </div>
 </template>
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  props: {
+    city: String
+  }
 }
 </script>
 
@@ -31,8 +34,9 @@ export default {
         transform: translateX(-3px) translateY(-0.1px);
         display: block;
     .header-right
-      width 1.32rem
+      width auto
       text-align center
+      padding 0 .2rem
       .iconfont
         font-size .26rem
         display: inline-block;
