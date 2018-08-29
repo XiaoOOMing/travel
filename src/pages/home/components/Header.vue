@@ -4,7 +4,9 @@
         <i class="iconfont">&#xe624;</i>
       </div>
       <div class="header-center"><i class="iconfont">&#xe632;</i> 输入城市/景点/游玩主题</div>
-      <div class="header-right">{{ city }}<i class="iconfont">&#xe64a;</i></div>
+      <router-link to="/city">
+        <div class="header-right">{{ city }}<i class="iconfont">&#xe64a;</i></div>
+      </router-link>
     </div>
 </template>
 
@@ -37,6 +39,7 @@ export default {
       width auto
       text-align center
       padding 0 .2rem
+      color #fff
       .iconfont
         font-size .26rem
         display: inline-block;
