@@ -10,12 +10,15 @@
         <div class="title">{{ sightName }}</div>
       </div>
     </div>
-    <common-gallery @close="handleGalleryClose" v-show="showGallery" :images="gallaryImgs"></common-gallery>
+    <common-fade>
+      <common-gallery @close="handleGalleryClose" v-show="showGallery" :images="gallaryImgs"></common-gallery>
+    </common-fade>
   </div>
 </template>
 
 <script>
 import CommonGallery from '@/common/gallery/Gallery'
+import CommonFade from '@/common/fade/Fade'
 
 export default {
   name: 'Banner',
@@ -30,7 +33,8 @@ export default {
     }
   },
   components: {
-    CommonGallery
+    CommonGallery,
+    CommonFade
   },
   methods: {
     handleBannerClick () {
