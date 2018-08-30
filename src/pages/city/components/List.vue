@@ -46,7 +46,9 @@ export default {
     ...mapMutations(['changeCity'])
   },
   mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+    this.scroll = new Bscroll(this.$refs.wrapper, {
+      click: true
+    })
   },
   watch: {
     letter () {
@@ -89,12 +91,12 @@ export default {
       margin-bottom .1rem
       .button
         border-radius .06rem
-        padding .1rem 0
+        padding .2rem 0
         border 1px solid #ddd
         text-align center
   .item-list
     .item
-      line-height .76rem
+      line-height .96rem
       color #666
       padding-left .2rem
       &:before

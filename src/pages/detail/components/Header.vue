@@ -20,13 +20,13 @@ export default {
     return {
       showAbs: true,
       opacityStyle: {
-        opacity: 0
+        opacity: 1
       }
     }
   },
   methods: {
     handleScroll () {
-      let scrollTop = document.documentElement.scrollTop
+      let scrollTop = document.body.scrollTop
       if (scrollTop > 60) {
         let opacity = scrollTop / 140
         opacity = opacity > 1 ? 1 : opacity
@@ -37,10 +37,10 @@ export default {
       }
     }
   },
-  activated () {
+  mounted () {
     window.addEventListener('scroll', this.handleScroll)
   },
-  deactivated () {
+  beforeDestroy () {
     window.removeEventListener('scroll', this.handleScroll)
   }
 }
@@ -72,6 +72,7 @@ export default {
     background $bgClolor
     text-align center
     color #fff
+    z-index 9
     .back
       position absolute
       left 0
