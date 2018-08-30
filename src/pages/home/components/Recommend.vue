@@ -6,7 +6,7 @@
     </div>
     <ul class="like-list">
       <li v-for="item of recommend" :key="item.id" class="like-item border-bottom">
-        <router-link to="/">
+        <router-link :to="'/detail/'+item.id">
           <div class="like-img-wrapper">
             <img :src="item.imgUrl" class="like-img">
             <div class="mp-like-tag" style="background-image:url(https://img1.qunarzz.com/piao/fusion/1802/20/2ba6d10b17972e02.png)">随买随用</div>
