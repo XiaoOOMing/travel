@@ -9,9 +9,6 @@
         </div>
         <div class="title">故宫(AAAAA景区)</div>
       </div>
-      <router-link class="back" to="/">
-        <i class="iconfont">&#xe624;</i>
-      </router-link>
     </div>
     <common-gallery @close="handleGalleryClose" v-show="showGallery" :images="images"></common-gallery>
   </div>
@@ -74,19 +71,4 @@ export default {
       .title
         margin-top .11rem
         margin-bottom .38rem
-    .back
-      position absolute
-      left .1rem
-      top .1rem
-      width .72rem
-      height .72rem
-      line-height .72rem
-      text-align center
-      color #fff
-      border-radius .36rem
-      background #000
-      opacity .5
-      i
-        font-size .32rem
-        font-weight bold
 </style>
