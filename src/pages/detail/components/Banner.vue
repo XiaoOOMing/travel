@@ -1,22 +1,44 @@
 <template>
-  <div class="banner">
-    <img src="//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg" class="banner-image">
-    <div class="banner-info">
-      <div class="image-number">
-        <i class="iconfont">&#xe626;</i>
-        10
+  <div>
+    <div class="banner">
+      <img @click="handleBannerClick" src="//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg" class="banner-image">
+      <div class="banner-info">
+        <div class="image-number">
+          <i class="iconfont">&#xe626;</i>
+          10
+        </div>
+        <div class="title">故宫(AAAAA景区)</div>
       </div>
-      <div class="title">故宫(AAAAA景区)</div>
+      <router-link class="back" to="/">
+        <i class="iconfont">&#xe624;</i>
+      </router-link>
     </div>
-    <router-link class="back" to="/">
-      <i class="iconfont">&#xe624;</i>
-    </router-link>
+    <common-gallery @close="handleGalleryClose" v-show="showGallery" :images="images"></common-gallery>
   </div>
 </template>
 
 <script>
+import CommonGallery from '@/common/gallery/Gallery'
+
 export default {
-  name: 'Banner'
+  name: 'Banner',
+  data () {
+    return {
+      images: ['http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_r_800x800_6edd8174.jpg', 'http://img1.qunarzz.com/sight/p55/201211/04/fbcab3e5d6479ce893835fbb.jpg_r_800x800_6360f514.jpg'],
+      showGallery: false
+    }
+  },
+  components: {
+    CommonGallery
+  },
+  methods: {
+    handleBannerClick () {
+      this.showGallery = true
+    },
+    handleGalleryClose () {
+      this.showGallery = false
+    }
+  }
 }
 </script>
 
